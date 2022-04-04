@@ -1,0 +1,18 @@
+		<h2>Last updates:</h2>
+		<hr>
+		<div class="last-updates">
+	  	{% for post in site.posts limit:10 %}
+	  		<div><div><date>{{ post.date  | date: '%B %d, %Y'}}</date></div><div><a href="index.html#{{ post.hashlink }}">{{ post.linktext }}</a></div></div>
+	  	{% endfor %}
+		</div>
+	  	<h2>Examples:</h2>
+	  	<hr>
+	  	<div class="code-descriptions">
+		  	{% for post in site.posts %}
+	  		<div>
+	  			<div><h3>{{ post.title }}</h3></div>
+	  			<div>{{ post.content }}</div>
+	  			<div><span>Source: </span><a href="{{ post.codeurl }}">{{ post.codeurl }}</a></div>
+	  		</div>
+		  	{% endfor %}
+		</div>

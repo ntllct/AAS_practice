@@ -1,0 +1,17 @@
+      <div>
+      {% for post in paginator.posts %}
+        <div class="post-preview">
+          <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
+          <div class="date-author"><div><span><b>Author: </b>{{ post.author }}</span></div><div><span>{{ post.date  | date: '%B %d, %Y'}}</span></div></div>
+          <div class="post-content-preview">
+            {{ post.content }}
+          </div>
+          <div class="post-categories">
+            <b>Categories: </b>
+            {% for category in post.categories %}
+              <a href="/category/{{category}}">{{category}}</a><span>,</span>
+            {% endfor %}
+          </div>
+        </div>
+      {% endfor %}
+      </div>
