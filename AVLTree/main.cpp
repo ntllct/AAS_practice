@@ -155,40 +155,40 @@ class AVL {
     }
 
     void LR() {
-      Node* lrcopy_ = left->right;
-      left->right = lrcopy_->left;
-      lrcopy_->left = left;
-      left = lrcopy_;
+      Node* lrcopy = left->right;
+      left->right = lrcopy->left;
+      lrcopy->left = left;
+      left = lrcopy;
       left->left->updateHeight();
       left->updateHeight();
       updateHeight();
     }
     void RL() {
-      Node* rlcopy_ = right->left;
-      right->left = rlcopy_->right;
-      rlcopy_->right = right;
-      right = rlcopy_;
+      Node* rlcopy = right->left;
+      right->left = rlcopy->right;
+      rlcopy->right = right;
+      right = rlcopy;
       right->right->updateHeight();
       right->updateHeight();
       updateHeight();
     }
     Node* LL() {
-      Node* lcopy_ = left;
+      Node* lcopy = left;
       left = left->right;
-      lcopy_->right = this;
-      if (lcopy_->left != nullptr) lcopy_->left->updateHeight();
-      if (lcopy_->right != nullptr) lcopy_->right->updateHeight();
-      lcopy_->updateHeight();
-      return (lcopy_);
+      lcopy->right = this;
+      if (lcopy->left != nullptr) lcopy->left->updateHeight();
+      if (lcopy->right != nullptr) lcopy->right->updateHeight();
+      lcopy->updateHeight();
+      return (lcopy);
     }
     Node* RR() {
-      Node* rcopy_ = right;
+      Node* rcopy = right;
       right = right->left;
-      rcopy_->left = this;
-      if (rcopy_->left != nullptr) rcopy_->left->updateHeight();
-      if (rcopy_->right != nullptr) rcopy_->right->updateHeight();
-      rcopy_->updateHeight();
-      return (rcopy_);
+      rcopy->left = this;
+      if (rcopy->left != nullptr) rcopy->left->updateHeight();
+      if (rcopy->right != nullptr) rcopy->right->updateHeight();
+      rcopy->updateHeight();
+      return (rcopy);
     }
 
     static size_t getHeight(Node* node) {
