@@ -148,8 +148,9 @@ body {
 main {
   background: #1f2630;
   color: #ccc;
-  min-height: calc( 100% - 60px );
+  min-height: calc( 100% - 140px );
   padding: 0;
+  margin-bottom: 80px;
 }
 main:after {
   content: "";
@@ -174,7 +175,8 @@ div.content-main-column>h2 {
 div.nav-main-column>div {
   padding: 10px;
   color: white;
-  background-color: black;
+  background: #334;
+  border-bottom: solid 3px #161b22;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -199,11 +201,12 @@ div.nav-main-column>ul>li>a {
 div.nav-main-column>ul>li>a:hover {
   color: #555;
 }
+
 div.last-updates>div {
   display: block;
 }
 div.last-updates {
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 div.last-updates>div>div {
   display: inline-block;
@@ -224,11 +227,57 @@ div.last-updates>div>div>a {
 div.last-updates>div>div>a:hover {
   color: yellow;
 }
-div.code-descriptions>div {
+
+
+div.all-updates>div {
+  display: block;
+}
+div.all-updates {
   margin-bottom: 20px;
+}
+div.all-updates>div>div {
+  display: inline-block;
+  padding: 5px;
+}
+div.all-updates>div>div:first-child {
+  width: 140px;
+  color: rgba(255, 255, 255, 0.4);
+}
+div.all-updates>div>div:last-child {
+  width: calc(100% - 140px);
+}
+div.all-updates>div>div>a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+div.all-updates>div>div>a:hover {
+  color: yellow;
+}
+
+div.code-descriptions>div:not(:last-child) {
+  margin-bottom: 20px;
+  border-bottom: dashed 1px rgba(255,255,255,0.2);
 }
 div.code-descriptions>div>div {
   padding: 10px 10px 10px 5px;
+}
+div.code-descriptions>div>div:last-child {
+  font-size: 0.9em;
+}
+div.code-descriptions>div>div:first-child>h3 {
+  font-weight: bold;
+}
+div.code-descriptions>div>div:last-child span {
+  color: rgba(255, 255, 255, 0.4);
+}
+div.code-descriptions>div>div:last-child a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+}
+div.code-descriptions>div>div:last-child a:hover {
+  color: rgba(255, 255, 0, 0.9);
+  text-decoration: underline;
 }
 hr {
   border: solid 1px rgba(255,255,255,0.3);
@@ -252,27 +301,15 @@ header {
   align-items: center;
 }
 footer {
-	background: #161b22;
+  background: #161b22;
   height: 80px;
   margin: -80px auto 0;
-  display: flex;
-  align-items: center;
-  padding: 0px calc((100% - 800px) / 2);
-}
-footer ul {
-  list-style: none;
-  margin-left: auto;
-}
-footer ul>li {
-  padding: 2px 0;
-}
-footer div {
-  display: inline;
-  width: 50%;
+  display: block;
+  text-align: left;
+  line-height: 80px;
+  padding: 0 0 0 325px;
   font-size: 0.9em;
   color: #888;
-  margin-bottom: auto;
-  padding-top: 10px;
 }
 footer a {
   color: #888;

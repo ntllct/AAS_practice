@@ -1,10 +1,8 @@
     <header>
-      <div><a href="/"><img src="{{ site.baseurl }}/assets/logo.png"></a></div>
+      <div><a href="{{ site.baseurl }}/"><img src="{{ site.baseurl }}/assets/logo.png"></a></div>
       <ul>
         {% for p in site.html_pages %}
-          {% if p.is_global_page != true %}
-            <li><a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a></li>
-          {% endif %}
+        <li><a href="{{ site.baseurl }}{{ p.url }}">{{ p.title }}</a></li>
         {% endfor %}
       </ul>
     </header>

@@ -1,12 +1,14 @@
 	  	<div>Code links:</div>
 	  	<ul>
-	  	{% for post in site.categories["Algorithm"] %}
-	  		<li><a href="index.html#{{ post.hashlink }}">{{ post.linktext }}</a></li>
+	  	{% assign sortedPosts = site.categories["Algorithm"] | sort: 'title' %}
+	  	{% for post in sortedPosts %}
+	  		<li><a href="{{ site.baseurl }}/index.html#{{ post.hashlink }}">{{ post.linktext }}</a></li>
 	  	{% endfor %}
 	  	</ul>
 	  	<div>CUDA:</div>
 	  	<ul>
-	  	{% for post in site.categories["CUDA"] %}
-	  		<li><a href="index.html#{{ post.hashlink }}">{{ post.linktext }}</a></li>
+	  	{% assign sortedPostsCUDA = site.categories["CUDA"] | sort: 'title' %}
+	  	{% for post in sortedPostsCUDA %}
+	  		<li><a href="{{ site.baseurl }}/index.html#{{ post.hashlink }}">{{ post.linktext }}</a></li>
 	  	{% endfor %}
 	  	</ul>

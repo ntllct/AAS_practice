@@ -10,7 +10,11 @@
 	  	{% include left-column.html %}
 	  </div>
 	  <div class="content-main-column">
-	  	<article>{{ content }}</article>
+	    <div class="all-updates">
+  	    {% for post in site.posts limit:10 %}
+  	      <div><div><date>{{ post.date  | date: '%B %d, %Y'}}</date></div><div><a href="{{ site.baseurl }}/index.html#{{ post.hashlink }}">{{ post.linktext }}</a></div></div>
+  	    {% endfor %}
+  	    </div>
 	  </div>
     </main>
     {% include footer.html %}
